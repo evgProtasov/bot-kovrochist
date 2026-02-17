@@ -12,10 +12,8 @@ def get_creds():
         "https://www.googleapis.com/auth/drive"
     ]
 
-    creds_dict = json.loads(GOOGLE_SHEETS_CREDENTIALS)
-
-    return Credentials.from_service_account_info(
-        creds_dict,
+    return Credentials.from_service_account_file(
+        "/opt/bot/google_creds.json",
         scopes=scopes
     )
 
